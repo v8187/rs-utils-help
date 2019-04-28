@@ -1,0 +1,208 @@
+html,
+body {
+    height: 100%;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li,
+section,
+aside,
+article,
+div,
+form {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-size: 22px;
+    line-height: 50px;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 15px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+h4 {
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+p,
+li {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+a {
+    font-size: 13px;
+    line-height: 20px;
+    cursor: pointer;
+
+    ul & {
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+            color: #333;
+            text-decoration: none;
+        }
+    }
+
+    ul.lines &,
+    & {
+        color: rgb(35, 93, 168);
+        text-decoration: underline;
+
+        &:hover {
+            color: rgb(12, 49, 97);
+        }
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 15px auto;
+
+    thead {
+        background: #eee;
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+    }
+
+    td {
+        vertical-align: top;
+    }
+}
+
+.tag {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 5px;
+    background: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.side-bar,
+.content-pane {
+    height: calc(100% - #{$headerHeight});
+    overflow: auto;
+}
+
+.side-bar {
+    width: $sidebarWidth;
+    float: left;
+}
+
+.content-pane {
+    margin-left: $sidebarWidth;
+    padding: 10px 20px;
+}
+
+input.hidden {
+    display: none;
+}
+
+
+pre {
+    background: transparent;
+    border: 0 none;
+    border-radius: 0;
+    text-align: left;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 13px;
+    line-height: 20px;
+
+    :not(pre)>& {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+    }
+}
+
+pre[class*="language-"] {
+    padding: 15px 20px;
+    max-height: 250px;
+}
+
+.content-pane {
+    // h3 {
+    //     margin-left: $intendation;
+    // }
+
+    ul {
+        // margin-left: calc(#{$intendation} * 2);
+        margin-left: $intendation;
+    }
+}
+
+.v-sorting-handle {
+    display: inline-block;
+}
+
+
+@media (max-width: 579px) {
+    .v-btn-icon-text {
+        .fa {
+            margin-right: 0;
+        }
+
+        span.text {
+            display: none;
+        }
+    }
+}
+
+.message-error {
+    margin: 5px 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 15px;
+    color: red;
+    text-align: justify;
+}
+
+//  Fix for Sortable list z-index issue in Modal
+.v-sortable-list {
+    z-index: 1051 !important;
+}
