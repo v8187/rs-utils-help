@@ -5,6 +5,7 @@ import { Location } from 'history';
 import MIndex from './MIndex';
 import Page404 from '../Page404';
 
+import MtoTitleCase from './MtoTitleCase';
 import MxToNum from './MxToNum';
 
 export interface IMethodeP {
@@ -19,6 +20,7 @@ export default class Method extends Component<IMethodeP> {
         const pathname = this.props.location.pathname.replace(/\//, '');
 
         switch (pathname) {
+            case 'toTitleCase': return <MtoTitleCase onMount={this.props.onMount} />;
             case 'xToNum': return <MxToNum onMount={this.props.onMount} />;
             case 'methods': return <MIndex />;
             default: return <Page404 />;

@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-export default class MxToNum extends Component<IOnMount> {
+export default class MtoTitleCase extends Component<IOnMount> {
 
     componentDidMount() {
         this.props.onMount && this.props.onMount();
     }
 
     render() {
-        return (<article className="xToNum">
-            <h1>xToNum</h1>
-            <p>This method can be used to convert all <span className="tag">x</span> to random number in given string.<br />
-                Rest of the characters in given string returned as it is.</p>
+        return (<article className="toTitleCase">
+            <h1>toTitleCase</h1>
+            <p>This method can be used to convert first character of each word to Uppercase in given sentence.</p>
             <h2>Params</h2>
             <p>It accepts following arguments:</p>
             <table>
@@ -26,7 +25,7 @@ export default class MxToNum extends Component<IOnMount> {
                     <tr>
                         <td>value</td>
                         <td>string</td>
-                        <td>Required. Any string containing <span className="tag">x</span> in it to be converted into random number.</td>
+                        <td>Required. Any string value.</td>
                     </tr>
                 </tbody>
             </table>
@@ -34,14 +33,14 @@ export default class MxToNum extends Component<IOnMount> {
             <pre>
                 <code className="language-javascript">
                     {`/**
- * Numbers Only:
+ * Example 1:
  */
-xToNum('xxxx'); // Outputs 4589
+toTitleCase('this is sample line'); // Outputs "This Is Sample Line"
 
 /**
- * Mixed characters:
+ * Example 2:
  */
-xToNum('IDxxxx'); // Outputs ID4589`}
+toTitleCase('BLA BLA'); // Outputs "Bla Bla"`}
                 </code>
             </pre>
         </article>);
