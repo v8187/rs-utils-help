@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-export default class MdeepMergeObject extends Component<IOnMount> {
+export default class MmergeObject extends Component<IOnMount> {
 
     componentDidMount() {
         this.props.onMount && this.props.onMount();
     }
 
     render() {
-        return (<article className="deepMergeObject">
-            <h1>deepMergeObject</h1>
+        return (<article className="mergeObject">
+            <h1>mergeObject</h1>
             <p>Returns a merged Object from given N number of objects.
  <br />Last object gets merged into object before it and it will continue untill all objects get merged into first one.</p>
             <h2>Params</h2>
@@ -38,7 +38,7 @@ export default class MdeepMergeObject extends Component<IOnMount> {
             <h2>Examples</h2>
             <pre>
                 <code className="language-javascript">
-                    {`const deepMergeObject1 = {
+                    {`const mergeObject1 = {
     scores: [{
         english: 45,
         maths: 50,
@@ -46,7 +46,7 @@ export default class MdeepMergeObject extends Component<IOnMount> {
     }]
 };
 
-const deepMergeObject2 = {
+const mergeObject2 = {
     scores: [{
         history: 89,
         humanities: 50,
@@ -54,7 +54,7 @@ const deepMergeObject2 = {
     }]
 };
 
-const deepMergeObject3 = {
+const mergeObject3 = {
     scores: [{
         chemistry: 90,
         drawing: 100,
@@ -62,8 +62,8 @@ const deepMergeObject3 = {
     }]
 };
 
-// Merge deepMergeObject2 into deepMergeObject1
-const deepMerged1 = deepMergeObject(deepMergeObject1, deepMergeObject2);
+// Merge mergeObject2 into mergeObject1
+const deepMerged1 = mergeObject(mergeObject1, mergeObject2);
 
 // Outputs
 /* {
@@ -76,8 +76,8 @@ const deepMerged1 = deepMergeObject(deepMergeObject1, deepMergeObject2);
     }]
 } */
 
-// Merge deepMergeObject2 & deepMergeObject3 into deepMergeObject1
-const deepMerged2 = deepMergeObject(deepMergeObject1, deepMergeObject2, deepMergeObject3);
+// Merge mergeObject2 & mergeObject3 into mergeObject1
+const deepMerged2 = mergeObject(mergeObject1, mergeObject2, mergeObject3);
 
 // Outputs
 /* {
